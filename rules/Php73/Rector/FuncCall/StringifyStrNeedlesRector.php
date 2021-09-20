@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Rector\Php73\Rector\FuncCall;
 
 use PhpParser\Node;
+use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\Cast\String_;
 use PhpParser\Node\Expr\FuncCall;
 use Rector\Core\Rector\AbstractRector;
@@ -77,7 +78,7 @@ CODE_SAMPLE
             return null;
         }
 
-        if (! $node->args[1] instanceof Node\Arg) {
+        if (! $node->args[1] instanceof Arg) {
             return null;
         }
 
