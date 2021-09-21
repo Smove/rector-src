@@ -53,6 +53,10 @@ final class MbStrrposEncodingArgumentPositionRector extends AbstractRector
             return null;
         }
 
+        if (! $node->args[2] instanceof Arg) {
+            return null;
+        }
+
         $secondArgType = $this->getStaticType($node->args[2]->value);
         if ($secondArgType instanceof IntegerType) {
             return null;
